@@ -144,8 +144,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e)=>{
   data.product="Kemei 2299";
   btn.disabled=true; btn.textContent="جاري إرسال الطلب...";
   try{
-    const r=await fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
-    if(!r.ok) throw new Error();
+    await fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
     msg.className="msg success"; msg.style.display="block";
     msg.textContent="✅ تم تسجيل طلبك بنجاح. سنتواصل معك لتأكيد الطلب.";
     e.target.reset(); document.getElementById("quantity").value="1"; updateTotal();
