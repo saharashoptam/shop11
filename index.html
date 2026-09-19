@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kemei 2299 | 2900 دج</title>
+<meta name="description" content="ماكينة حلاقة Kemei 2299 بسعر 2900 دج في تمنراست">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f5f6f8;color:#171717}
+.wrap{max-width:1050px;margin:auto;padding:12px}.hero{background:#111;color:#fff;border-radius:24px;padding:32px 20px;margin-top:12px;text-align:center}
+.badge{display:inline-block;background:#e63946;padding:8px 14px;border-radius:999px;font-weight:700}h1{font-size:clamp(32px,7vw,54px);margin:16px 0 8px}.subtitle{font-size:19px;color:#ddd}.price{font-size:40px;font-weight:900;color:#ffd166;margin:16px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.card{background:#fff;border-radius:20px;padding:22px;box-shadow:0 8px 30px #0000000d}
+.product img{width:100%;max-height:520px;object-fit:contain;border-radius:16px}.thumbs{display:flex;gap:10px;margin-top:10px}.thumbs img{width:78px;height:78px;object-fit:cover;border-radius:10px;cursor:pointer}
+ul{padding-right:22px;line-height:2}label{display:block;font-weight:700;margin:10px 0 6px}input,textarea,select{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:16px}
+textarea{min-height:90px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{width:100%;border:0;border-radius:14px;padding:16px;margin-top:16px;background:#16a34a;color:#fff;font-size:20px;font-weight:900;cursor:pointer}button:disabled{opacity:.6}
+.note{text-align:center;color:#666;font-size:13px;margin-top:10px}.success,.error{display:none;padding:14px;border-radius:12px;margin-top:14px;text-align:center;font-weight:700}.success{background:#dcfce7;color:#166534}.error{background:#fee2e2;color:#991b1b}
+footer{text-align:center;color:#777;padding:24px}@media(max-width:700px){.grid,.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero"><span class="badge">🔥 عرض خاص</span><h1>Kemei 2299</h1><div class="subtitle">ماكينة حلاقة عملية للاستخدام اليومي</div><div class="price">2900 دج</div><div>📍 الطلب في تمنراست</div></section>
+<section class="grid">
+<div class="card product">
+<img id="mainImage" src="images/kemei2299-features.jpg" alt="ماكينة حلاقة Kemei 2299">
+<div class="thumbs">
+<img src="images/kemei2299-features.jpg" alt="خصائص Kemei 2299" onclick="mainImage.src=this.src">
+<img src="images/kemei2299-kit.jpg" alt="محتويات Kemei 2299" onclick="mainImage.src=this.src">
+</div>
+</div>
+<div class="card"><h2>مميزات المنتج</h2><ul>
+<li>شفرة Zero Blade ‏0mm</li><li>مؤشر شحن</li><li>منفذ USB Type-C</li><li>سطح مضاد للانزلاق</li><li>تصميم عملي ومريح</li>
+</ul><h3>محتويات العلبة</h3><ul><li>ماكينة Kemei KM-2299</li><li>أمشاط مرفقة</li><li>فرشاة تنظيف</li><li>كابل شحن USB Type-C</li></ul></div>
+</section>
+<section class="card" style="margin-top:20px"><h2>اطلب الآن</h2>
+<form id="orderForm">
+<div class="form-row"><div><label>الاسم الكامل *</label><input name="name" required></div><div><label>رقم الهاتف *</label><input name="phone" type="tel" inputmode="tel" required></div></div>
+<div class="form-row"><div><label>المدينة / الولاية *</label><input name="city" value="تمنراست" required></div><div><label>الكمية *</label><select name="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div></div>
+<label>العنوان / الحي *</label><textarea name="address" required placeholder="اكتب الحي والعنوان"></textarea>
+<label>ملاحظة (اختياري)</label><textarea name="note" placeholder="أي معلومات إضافية"></textarea>
+<button id="submitBtn">🛒 تأكيد الطلب</button><div class="note">سيتم التواصل معك هاتفياً لتأكيد الطلب.</div>
+<div id="success" class="success">تم إرسال طلبك بنجاح ✅</div><div id="error" class="error">حدث خطأ، حاول مرة أخرى.</div>
+</form></section><footer>© 2026 Kemei 2299</footer>
+</main>
+<script>
+const SCRIPT_URL="ضع_هنا_رابط_تطبيق_جوجل_شيت";
+document.getElementById("orderForm").addEventListener("submit",async e=>{
+e.preventDefault();const b=document.getElementById("submitBtn"),s=document.getElementById("success"),x=document.getElementById("error");
+s.style.display="none";x.style.display="none";
+if(SCRIPT_URL.includes("ضع_هنا")){x.textContent="سيتم تفعيل الطلبات بعد ربط Google Sheets.";x.style.display="block";return}
+b.disabled=true;b.textContent="جاري إرسال الطلب...";
+const data=Object.fromEntries(new FormData(e.target).entries());data.product="Kemei 2299";data.price="2900";data.timestamp=new Date().toISOString();
+try{await fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});e.target.reset();document.querySelector('[name=city]').value="تمنراست";s.style.display="block"}catch(err){x.style.display="block"}finally{b.disabled=false;b.textContent="🛒 تأكيد الطلب"}
+});
+</script>
+</body></html>
