@@ -40,7 +40,7 @@ footer{text-align:center;color:#667085;padding:22px 0}
 </style>
 </head>
 <body>
-<main class="wrap">
+<iframe name="appsScriptFrame" style="display:none"></iframe>\n<main class="wrap">
 <section class="hero">
   <span class="badge">🔥 عرض خاص</span>
   <h1>Kemei 2299</h1>
@@ -144,7 +144,24 @@ document.getElementById("orderForm").addEventListener("submit", async (e)=>{
   data.product="Kemei 2299";
   btn.disabled=true; btn.textContent="جاري إرسال الطلب...";
   try{
-    await fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+    const sendForm = document.createElement("form");
+    sendForm.method = "POST";
+    sendForm.action = SCRIPT_URL;
+    sendForm.target = "appsScriptFrame";
+    sendForm.style.display = "none";
+
+    Object.entries(data).forEach(([key,value])=>{
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value ?? "";
+      sendForm.appendChild(input);
+    });
+
+    document.body.appendChild(sendForm);
+    sendForm.submit();
+    sendForm.remove();
+
     msg.className="msg success"; msg.style.display="block";
     msg.textContent="✅ تم تسجيل طلبك بنجاح. سنتواصل معك لتأكيد الطلب.";
     e.target.reset(); document.getElementById("quantity").value="1"; updateTotal();
