@@ -38,6 +38,20 @@ button:disabled{opacity:.6}
 footer{text-align:center;color:#667085;padding:22px 0}
 @media(max-width:750px){.grid{grid-template-columns:1fr}h1{font-size:34px}.price{font-size:34px}.wrap{padding:10px}}
 .sticky-cta{position:fixed;bottom:12px;left:12px;right:12px;z-index:50;display:none}.sticky-cta button{width:100%;box-shadow:0 8px 25px #0003}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.trust div{background:#ffffff18;border:1px solid #ffffff22;border-radius:12px;padding:10px 6px;font-size:14px}.hero .micro{font-size:14px;margin-top:12px;opacity:.88}.social-proof{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:14px;padding:12px;margin-top:14px;font-weight:700;text-align:center}.qty-offer{display:grid;gap:8px;margin:12px 0}.qty-offer div{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;background:#fafafa}.qty-offer .highlight{border-color:#f6d365;background:#fff7df}.small{font-size:13px;color:#667085}@media(max-width:750px){.sticky-cta{display:block}.trust div{font-size:12px}.wrap{padding-bottom:85px}}</style>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1052207097812282');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1052207097812282&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 <iframe name="appsScriptFrame" style="display:none"></iframe><main class="wrap">
@@ -167,6 +181,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e)=>{
     document.body.appendChild(sendForm);
     sendForm.submit();
     sendForm.remove();
+    if (typeof fbq === 'function') fbq('track', 'Lead');
 
     msg.className="msg success"; msg.style.display="block";
     msg.textContent="✅ تم تسجيل طلبك بنجاح. سنتواصل معك لتأكيد الطلب.";
