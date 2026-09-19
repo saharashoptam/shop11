@@ -37,10 +37,10 @@ button:disabled{opacity:.6}
 .error{display:block;background:#fff0f0;color:#991b1b}
 footer{text-align:center;color:#667085;padding:22px 0}
 @media(max-width:750px){.grid{grid-template-columns:1fr}h1{font-size:34px}.price{font-size:34px}.wrap{padding:10px}}
-</style>
+.sticky-cta{position:fixed;bottom:12px;left:12px;right:12px;z-index:50;display:none}.sticky-cta button{width:100%;box-shadow:0 8px 25px #0003}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.trust div{background:#ffffff18;border:1px solid #ffffff22;border-radius:12px;padding:10px 6px;font-size:14px}.hero .micro{font-size:14px;margin-top:12px;opacity:.88}.social-proof{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:14px;padding:12px;margin-top:14px;font-weight:700;text-align:center}.qty-offer{display:grid;gap:8px;margin:12px 0}.qty-offer div{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;background:#fafafa}.qty-offer .highlight{border-color:#f6d365;background:#fff7df}.small{font-size:13px;color:#667085}@media(max-width:750px){.sticky-cta{display:block}.trust div{font-size:12px}.wrap{padding-bottom:85px}}</style>
 </head>
 <body>
-<iframe name="appsScriptFrame" style="display:none"></iframe>\n<main class="wrap">
+<iframe name="appsScriptFrame" style="display:none"></iframe><main class="wrap">
 <section class="hero">
   <span class="badge">🔥 عرض خاص</span>
   <h1>Kemei 2299</h1>
@@ -48,6 +48,8 @@ footer{text-align:center;color:#667085;padding:22px 0}
   <div class="price">2900 دج</div>
   <div class="delivery">🚚 التوصيل 300 دج</div>
   <div class="delivery">🎁 التوصيل مجاني عند طلب 3 ماكينات أو أكثر</div>
+  <div class="micro">📦 اطلب الآن وسنتواصل معك لتأكيد التفاصيل قبل الإرسال</div>
+  <div class="trust"><div>📞 تأكيد هاتفي</div><div>🚚 توصيل للعنوان</div><div>🔒 طلب مباشر</div></div>
 </section>
 
 <section class="grid">
@@ -60,7 +62,8 @@ footer{text-align:center;color:#667085;padding:22px 0}
   </div>
 
   <div class="card">
-    <h2>مميزات المنتج</h2>
+    <div class="social-proof">⭐ ماكينة عملية للاستخدام اليومي — اطلبها الآن بسعر 2900 دج</div>
+    <h2 style="margin-top:18px">مميزات المنتج</h2>
     <ul>
       <li>شفرة Zero Blade ‏0mm</li>
       <li>مؤشر شحن</li>
@@ -87,6 +90,7 @@ footer{text-align:center;color:#667085;padding:22px 0}
   <div><label>المدينة</label><input name="city" value="تمنراست" required></div>
   <div><label>العنوان</label><input name="address" required placeholder="الحي / العنوان"></div>
   <div><label>الكمية</label>
+    <div class="qty-offer"><div><span>1 ماكينة</span><strong>2900 دج + 300 دج توصيل</strong></div><div><span>2 ماكينات</span><strong>5800 دج + 300 دج توصيل</strong></div><div class="highlight"><span>3 ماكينات 🎁</span><strong>8700 دج — التوصيل مجاني</strong></div></div>
     <select name="quantity" id="quantity">
       <option value="1">1 ماكينة</option>
       <option value="2">2 ماكينات</option>
@@ -103,12 +107,14 @@ footer{text-align:center;color:#667085;padding:22px 0}
     <div class="grand"><span>المجموع</span><strong id="grandTotal">3200 دج</strong></div>
   </div>
 
-  <button id="submitBtn" type="submit">🛒 تأكيد الطلب</button>
+  <button id="submitBtn" type="submit">🛒 تأكيد الطلب الآن</button>
+  <div class="small">لن يتم خصم أي مبلغ عبر الموقع. سنتواصل معك لتأكيد الطلب.</div>
   <div id="message" class="msg"></div>
 </form>
 </section>
 
-<footer>© 2026 Kemei 2299</footer>
+<footer>© 2026 Kemei 2299<br><span class="small">السعر 2900 دج • التوصيل 300 دج • مجاني من 3 ماكينات</span></footer>
+<div class="sticky-cta"><button type="button" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">🛒 اطلب Kemei 2299 الآن — 2900 دج</button></div>
 </main>
 
 <script>
@@ -169,7 +175,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e)=>{
     msg.className="msg error"; msg.style.display="block";
     msg.textContent="❌ تعذر إرسال الطلب. تحقق من رابط Google Apps Script.";
   }finally{
-    btn.disabled=false; btn.textContent="🛒 تأكيد الطلب";
+    btn.disabled=false; btn.textContent="🛒 تأكيد الطلب الآن";
   }
 });
 </script>
